@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            font-size: 12px;
+        }
+        .header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section h4 {
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+            font-size: 13px;
+        }
+        .field {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">COMMERCIAL </div>
+
+    <div class="section">
+        <h4>From</h4>
+        <div class="field">{{ dados.NAME_USER }} - {{ dados.SMTP_USER }}</div>
+    </div>
+
+    <div class="section">
+        <h4>To</h4>
+        <div class="field">{{ dados.CLIENTE }}</div>
+    </div>
+
+    <div class="section">
+        <h4>A/C</h4>
+        <div class="field">{{ dados.NAME_CP }}</div>
+        <div class="field">Tel: {{ dados.DIRECT_PHONE }}</div>
+    </div>
+
+    <div class="section">
+        <h4>Quotation</h4>
+        <div class="field">Reference: {{ dados.CODE }}</div>
+        <div class="field">Request: {{ dados.DATE_REQUEST.strftime('%d/%m/%Y') }}</div>
+        <div class="field">Validity: {{ dados.DATE_VALIDITY.strftime('%d/%m/%Y') }}</div>
+        <div class="field">Send Date: {{ dados.DATE_CREATION.strftime('%d/%m/%Y') }}</div>
+    </div>
+
+    <div class="section">
+        <h4>Shipment</h4>
+        <div class="field">{{ dados.SUBJECT }}</div>
+        <div class="field">Origin: {{ dados.ORIGIN }}</div>
+        <div class="field">Destination: {{ dados.DESTINATION }}</div>
+        <div class="field">P.O Cliente: {{ dados.CLIENT_PO }}</div>
+        <div class="field">Client Reference: {{ dados.REF_CLIENT }}</div>
+        <div class="field">Incoterm: {{ dados.INCOTERM }}</div>
+
+
+    </div>
+
+    <div class="section">
+        <h4>Agent</h4>
+        <div class="field">{{ dados.AGENTE_NOME }}</div>
+        <div class="field">CNPJ: {{ dados.FEDERAL_REGISTRATION }}</div>
+        <div class="field">Tel: {{ dados.AGENTE_FONE }}</div>
+        <div class="field">{{ dados.STREET_NAME }}, {{ dados.COMPLEMENT }}</div>
+        <div class="field">{{ dados.NEIGHBORHOOD }} - {{ dados.CITY_NAME }}</div>
+    </div>
+</body>
+</html>
